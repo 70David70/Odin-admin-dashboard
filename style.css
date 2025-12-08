@@ -2,7 +2,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    transition: 1s;
+    transition: 0.5s;
 }
 
 :root {
@@ -14,18 +14,16 @@ body {
     display: grid;
     grid-template-columns: minmax(100px, 1.2fr) 5fr;
     grid-template-rows: 1.5fr 2.7fr 14fr;
-    background-color: antiquewhite;
 }
 
 .sidebar {
-    background-color: rgb(138, 90, 90);
+    background-color: rgb(255, 255, 255);
     grid-area: 1 / 1 / -1 / 1;
     height: 100%;
     display: flex;
     flex-direction: column;
     padding: 5vh 15px;
     gap: 10vh;
-    box-shadow: 10px 0px rgba(54, 33, 33, 0.445);
 }
 .sidebar .links, .sidebar .addetional-links {
     display: flex;
@@ -35,7 +33,7 @@ body {
     gap: 2vh;
 }
 .sidebar a {
-    color: white;
+    color: black;
     width: fit-content;
     text-decoration: none;
     font-style: italic;
@@ -44,7 +42,17 @@ body {
     border-radius: 10px;
     background-color: rgba(255, 0, 0, 0.521);
     padding: 0 50px;
-    box-shadow: 0 0 50px black;
+    box-shadow: 10px 10px black;
+    border: 1px solid black;
+}
+.dashboard-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.dashboard-title img {
+    mix-blend-mode: multiply;
+    width: 2em;
 }
 header {
     display: flex;
@@ -52,6 +60,14 @@ header {
     align-items: center;
     padding: var(--padding);
     gap: 25px;
+}
+header img {
+    width: 20px;
+}
+header .search + div > img {
+    height: 50px;
+    width: 50px;
+    border-radius: 50px;
 }
 header > div {
     display: flex;
@@ -63,18 +79,18 @@ header input {
     width: 40vw;
     height: 2em;
     border-radius: 5px;
-    border: none;
-    background-color: rgba(194, 194, 194, 0.596);
-    font-weight: bolder;
-    padding: 5px;
+    border: 3px solid black;
+    color: white;
+    background-color: rgb(114, 88, 88);
+    font-weight: bolder;    padding: 5px;
 }
 article {
-    background-color: red;
     grid-area: 3 / 2 / 3 / 3;
     display: flex;
     justify-content: space-between;
     padding: 0 20px;
     gap: 20px;
+    background-color: antiquewhite;
 
 }
 article .left-side {
@@ -83,15 +99,51 @@ article .left-side {
     grid-template: 50px repeat(2, 20vh) / repeat(2, minmax(100px, 1fr));
     gap: 1em
 }
+.left-side img {
+    width: 100%;
+    height: 100%;
+    mix-blend-mode:multiply;
+    opacity: 0.8;
+}
 .left-side h3 {
-    grid-area: 1 / 1 / 1 / 4;
+    grid-area: 1 / 1 / 1 / 3;
+    color: black;
     justify-self: baseline;
     align-self: flex-end;
 }
-article a div{
-    background-color: white;
+article a{
     height: 100%;
     border-radius: 5px;
+    box-shadow: 5px 10px black;
+    border: 2px solid black;
+    position: relative;
+}
+article a div {
+    height: 100%;
+    width: 100%;
+    z-index: 3;
+    background-color: rgba(63, 2, 55, 0.158);
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+}
+article a div:hover {
+    background-color: rgba(255, 0, 0, 0.555);
+}
+article a div p {
+    color: rgb(255, 255, 255);
+    border: 1px solid black;
+    background-color: rgba(0, 0, 0, 0.61);
+    padding: 0 50px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    box-shadow: 5px 5px black;
+}
+article a:hover {
+    height: 95%;
+    border: 5px solid black;
 }
 article .right-side {
     padding-top: 4vh;
@@ -105,20 +157,21 @@ article .right-side {
     grid-row: announcements;
 }
 .right-side .acontent {
-    background-color: aliceblue;
     height: 90%;
 }
 .right-side h3 {
     margin-bottom: 1vh;
-    color: white;
+    color: black;
 }
 .bcontent {
-    background-color: aliceblue;
     height: 90%;
 }
 .acontent, .bcontent {
+    border: 3px solid black;
+    box-shadow: 5px 5px black;
     display: flex;
     flex-direction: column;
+    color: black;
     gap: 20px;
     padding: 20px;
 }
@@ -144,7 +197,6 @@ article .right-side {
     width: 5em;
     border-radius: 50px;
     background-size: cover;
-    background-color: red;
 }
 .info h2 {
     display: inline;
